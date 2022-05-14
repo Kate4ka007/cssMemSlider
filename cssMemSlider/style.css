@@ -2,6 +2,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  outline: none;
 }
 
 html {
@@ -20,7 +21,6 @@ body {
   width: 73rem;
   height: 63rem;
   background-color: #484f58;
- /*  border: 2px red solid; */
   margin-top: 8rem;
   display: flex;
   flex-wrap: wrap;
@@ -32,9 +32,7 @@ body {
 }
 
 .slider_container {
-  /*   width: 71rem; */
-  height: 44rem;
- /*  border: 2px green solid; */
+  height: 44rem;  
   display: flex;
   flex-direction: row;
   overflow: hidden;
@@ -43,9 +41,7 @@ body {
 }
 
 .container {
-  /*   width: 71rem; */
   height: 44rem;
- /*  border: 2px green solid; */
   display: flex;
   flex-direction: row;
   overflow: hidden;
@@ -54,7 +50,6 @@ body {
 }
 
 .text_container {
- /*  border: 2px rgb(65, 112, 240) solid; */
   width: 50%;
   display: flex;
   overflow: hidden;
@@ -62,7 +57,6 @@ body {
 }
 
 .buttons_container {
- /*  border: 2px #e721ac solid; */
   width: 50%;
 }
 
@@ -79,7 +73,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  
 }
 
 .buttons_container {
@@ -114,16 +107,32 @@ body {
 
 #slider1:checked ~ div .buttons_container .buttons_radio:nth-child(1) .but,
 #slider2:checked ~ div .buttons_container .buttons_radio:nth-child(2) .but,
-#slider3:checked ~ div .buttons_container .buttons_radio:nth-child(3) .but ,
+#slider3:checked ~ div .buttons_container .buttons_radio:nth-child(3) .but,
 #slider4:checked ~ div .buttons_container .buttons_radio:nth-child(4) .but {
   background: rgb(0, 138, 252);
   border: 3px solid rgb(0, 138, 252);
 }
 
-#slider1:checked ~ div .buttons_container .buttons_radio:nth-child(1):hover .but,
-#slider2:checked ~ div .buttons_container .buttons_radio:nth-child(2):hover .but,
-#slider3:checked ~ div .buttons_container .buttons_radio:nth-child(3):hover .but,
-#slider4:checked ~ div .buttons_container .buttons_radio:nth-child(4):hover .but {
+#slider1:checked
+  ~ div
+  .buttons_container
+  .buttons_radio:nth-child(1):hover
+  .but,
+#slider2:checked
+  ~ div
+  .buttons_container
+  .buttons_radio:nth-child(2):hover
+  .but,
+#slider3:checked
+  ~ div
+  .buttons_container
+  .buttons_radio:nth-child(3):hover
+  .but,
+#slider4:checked
+  ~ div
+  .buttons_container
+  .buttons_radio:nth-child(4):hover
+  .but {
   background: rgb(0, 138, 252);
   border: 3px solid rgb(252, 253, 253);
 }
@@ -145,7 +154,6 @@ body {
   width: 5rem;
   height: 5rem;
   border-radius: 50%;
- /*  border: 3px solid rgb(0, 138, 252); */
   margin: 0.1rem;
   cursor: pointer;
   background: none;
@@ -158,7 +166,6 @@ body {
   height: 2rem;
   border-radius: 50%;
   border: 3px solid rgb(0, 138, 252);
- /*  margin: 1rem; */
   cursor: pointer;
 }
 
@@ -174,14 +181,15 @@ body {
   width: 100%;
   flex-shrink: 0;
   padding: 0.5rem;
+  outline: none;
 }
 
 .radio {
   display: none;
+  outline: none;
 }
 
-
-@media screen and (max-width: 705px){
+@media screen and (max-width: 705px) {
   .wrapper {
     height: 60rem;
     width: 38rem;
@@ -197,25 +205,22 @@ body {
 
   .container {
     width: 34rem;
+  }
+  .slider_wrap {
+    width: 34rem;
+    height: 44rem;
+  }
 
-}
-.slider_wrap {
-  width: 34rem;
-  height: 44rem;
-}
+  .slide {
+    width: 34rem;
+    height: auto;
+  }
 
-.slide {
-  width: 34rem;
-  height: auto;
-  
-}
+  .buttons_container {
+    margin: 0 auto 2rem auto;
+  }
 
-.buttons_container {
-  margin: 0 auto 2rem auto;
-}
-
-.label {
-  font-size: 2rem;
-}
-
+  .label {
+    font-size: 2rem;
+  }
 }
