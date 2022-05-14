@@ -10,7 +10,7 @@ html {
 }
 
 body {
-  background-color: #484f58;
+  background-color: #d3deec;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -18,22 +18,34 @@ body {
 
 .wrapper {
   width: 73rem;
-  height: 55rem;
+  height: 63rem;
   background-color: #484f58;
-  border: 2px red solid;
+ /*  border: 2px red solid; */
   margin-top: 8rem;
   display: flex;
   flex-wrap: wrap;
-  padding: 1rem;
+  padding: 3rem 1rem;
   justify-content: space-between;
   scroll-behavior: smooth;
   overflow: hidden;
+  border-radius: 3rem;
 }
 
 .slider_container {
   /*   width: 71rem; */
   height: 44rem;
-  border: 2px green solid;
+ /*  border: 2px green solid; */
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  scroll-behavior: smooth;
+  transition: 5s;
+}
+
+.container {
+  /*   width: 71rem; */
+  height: 44rem;
+ /*  border: 2px green solid; */
   display: flex;
   flex-direction: row;
   overflow: hidden;
@@ -42,19 +54,21 @@ body {
 }
 
 .text_container {
-  border: 2px rgb(65, 112, 240) solid;
+ /*  border: 2px rgb(65, 112, 240) solid; */
   width: 50%;
   display: flex;
   overflow: hidden;
+  height: 8rem;
 }
 
 .buttons_container {
-  border: 2px #e721ac solid;
+ /*  border: 2px #e721ac solid; */
   width: 50%;
 }
 
 .slide {
   height: 100%;
+  border-radius: 3rem;
 }
 
 .slider_wrap {
@@ -65,6 +79,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  
 }
 
 .buttons_container {
@@ -97,12 +112,20 @@ body {
   margin-left: -300%;
 }
 
-#slider1:checked ~ div .buttons_container .buttons_radio:nth-child(1),
-#slider2:checked ~ div .buttons_container .buttons_radio:nth-child(2),
-#slider3:checked ~ div .buttons_container .buttons_radio:nth-child(3),
-#slider4:checked ~ div .buttons_container .buttons_radio:nth-child(4) {
-  background: rgb(22, 95, 253);
-  border: 3px solid rgb(22, 95, 253);
+#slider1:checked ~ div .buttons_container .buttons_radio:nth-child(1) .but,
+#slider2:checked ~ div .buttons_container .buttons_radio:nth-child(2) .but,
+#slider3:checked ~ div .buttons_container .buttons_radio:nth-child(3) .but ,
+#slider4:checked ~ div .buttons_container .buttons_radio:nth-child(4) .but {
+  background: rgb(0, 138, 252);
+  border: 3px solid rgb(0, 138, 252);
+}
+
+#slider1:checked ~ div .buttons_container .buttons_radio:nth-child(1):hover .but,
+#slider2:checked ~ div .buttons_container .buttons_radio:nth-child(2):hover .but,
+#slider3:checked ~ div .buttons_container .buttons_radio:nth-child(3):hover .but,
+#slider4:checked ~ div .buttons_container .buttons_radio:nth-child(4):hover .but {
+  background: rgb(0, 138, 252);
+  border: 3px solid rgb(252, 253, 253);
 }
 
 #slider1:checked ~ div .text_container label.label:nth-child(1) {
@@ -119,27 +142,80 @@ body {
 }
 
 .buttons_radio {
-  width: 15px;
-  height: 15px;
+  width: 5rem;
+  height: 5rem;
   border-radius: 50%;
-  border: 3px solid rgb(22, 95, 253);
-  margin: 1rem;
+ /*  border: 3px solid rgb(0, 138, 252); */
+  margin: 0.1rem;
+  cursor: pointer;
+  background: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.but {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: 3px solid rgb(0, 138, 252);
+ /*  margin: 1rem; */
   cursor: pointer;
 }
 
-.buttons_radio:hover {
+.buttons_radio:hover .but {
   background-color: aliceblue;
   border: 3px solid aliceblue;
 }
 
 .label {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 2rem;
+  font-size: 3rem;
   color: rgb(255, 255, 255);
   width: 100%;
   flex-shrink: 0;
+  padding: 0.5rem;
 }
 
 .radio {
   display: none;
+}
+
+
+@media screen and (max-width: 705px){
+  .wrapper {
+    height: 60rem;
+    width: 38rem;
+    flex-direction: column;
+    padding: 0 2rem;
+    justify-content: flex-start;
+  }
+
+  .text_container {
+    order: 1;
+    width: 100%;
+  }
+
+  .container {
+    width: 34rem;
+
+}
+.slider_wrap {
+  width: 34rem;
+  height: 44rem;
+}
+
+.slide {
+  width: 34rem;
+  height: auto;
+  
+}
+
+.buttons_container {
+  margin: 0 auto 2rem auto;
+}
+
+.label {
+  font-size: 2rem;
+}
+
 }
