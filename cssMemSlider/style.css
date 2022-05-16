@@ -54,6 +54,7 @@ body {
   display: flex;
   overflow: hidden;
   height: 8rem;
+  transition: 1000ms all linear;
 }
 
 .buttons_container {
@@ -66,7 +67,19 @@ body {
 }
 
 .slider_wrap {
-  width: 71rem;
+  max-width: 71rem;
+  width: 96vw;
+  height: auto;
+  flex-shrink: 0;
+  flex-grow: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider_wrap:last-child {
+  max-width: 71rem;
+  width: 98vw;
   height: auto;
   flex-shrink: 0;
   flex-grow: 0;
@@ -138,15 +151,19 @@ body {
 
 #slider1:checked ~ div .text_container label.label:nth-child(1) {
   margin-left: -0%;
+  transition: 1200ms;
 }
 #slider2:checked ~ div .text_container label.label:nth-child(1) {
   margin-left: -100%;
+  transition: 1200ms;
 }
 #slider3:checked ~ div .text_container label.label:nth-child(1) {
   margin-left: -200%;
+  transition: 1200ms;
 }
 #slider4:checked ~ div .text_container label.label:nth-child(1) {
   margin-left: -300%;
+  transition: 1200ms;
 }
 
 .buttons_radio {
@@ -188,7 +205,21 @@ body {
   outline: none;
 }
 
-@media screen and (max-width: 705px) {
+@media screen and (max-width: 740px) and (min-width: 520px){
+.slider_wrap:last-child {
+  max-width: 71rem;
+  width: calc(100vw);
+}
+}
+@media screen and (max-width: 519px) and (min-width: 481px){
+  .slider_wrap:last-child {
+    max-width: 71rem;
+    width: calc(95vw);
+  }
+}
+
+
+@media screen and (max-width: 480px) {
   .wrapper {
     height: 60rem;
     width: 38rem;
@@ -200,6 +231,11 @@ body {
   .text_container {
     order: 1;
     width: 100%;
+  }
+  .slider_wrap:last-child {
+    width: 34rem;
+    height: 44rem;
+
   }
 
   .container {
