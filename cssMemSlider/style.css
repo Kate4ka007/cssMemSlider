@@ -226,6 +226,7 @@ body {
     flex-direction: column;
     padding: 0 2rem;
     justify-content: flex-start;
+    margin-top: 5rem;
   }
 
   .text_container {
@@ -248,6 +249,54 @@ body {
 
   .slide {
     width: 34rem;
+    height: auto;
+  }
+
+  .buttons_container {
+    margin: 0 auto 2rem auto;
+  }
+
+  .label {
+    font-size: 2rem;
+  }
+}
+
+
+@media screen and (max-width: 379px) {
+  .wrapper {
+    height: 55rem;
+    width: 32rem;
+    flex-direction: column;
+    padding: 0 2rem;
+    justify-content: flex-start;
+    margin-top: 1rem;
+  }
+
+  .slider_container {
+    height: 38rem;
+  }
+
+  .text_container {
+    order: 1;
+    width: 100%;
+  }
+  .slider_wrap:last-child {
+    width: 28rem;
+    height: 38rem;
+
+  }
+
+  .container {
+    width: 28rem;
+    height: 38rem;
+  }
+  .slider_wrap {
+    width: 28rem;
+    height: 38rem;
+  }
+
+  .slide {
+    width: 28rem;
     height: auto;
   }
 
